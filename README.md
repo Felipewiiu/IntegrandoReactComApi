@@ -30,7 +30,7 @@ Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no se
 
 ## Como isntalar, criar e inicializar o docker?
 
-## Baixando a biblioteca 
+## Baixando a biblioteca Mui
 
 Material UI é uma biblioteca de componentes React de código aberto que implementa o design do Google.
 Ele inclui uma coleção abrangente de componentes pré-construídos que estão prontos para uso na produção imediata.
@@ -40,6 +40,12 @@ Ele inclui uma coleção abrangente de componentes pré-construídos que estão 
  - Link: https://mui.com/
  - Comando de instalação: npm install @mui/material @emotion/react @emotion/styled
  - componentes: https://mui.com/material-ui/react-progress/
+
+## O método post
+
+Esse método recebe por padrão dois parametros: 
+- url
+- body : que recebe o objeto com os valores a ser enviados para api
 
 
 

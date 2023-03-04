@@ -28,6 +28,19 @@ Para abrir e rodar o projeto, execute npm i para instalar as dependências e npm
 
 Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no seu navegador.
 
-## 📚 Mais informações do curso
+## Como isntalar, criar e inicializar o docker?
 
-Busque na plataforma da Alura o curso **Integrando seu projeto React com APIs** publicado na Escola Frontend.
+## Baixando a biblioteca 
+
+Material UI é uma biblioteca de componentes React de código aberto que implementa o design do Google.
+Ele inclui uma coleção abrangente de componentes pré-construídos que estão prontos para uso na produção imediata.
+
+> Maneira de fazer a instalação
+
+ - Link: https://mui.com/
+ - Comando de instalação: npm install @mui/material @emotion/react @emotion/styled
+ - componentes: https://mui.com/material-ui/react-progress/
+
+
+
+

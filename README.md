@@ -47,6 +47,48 @@ Esse método recebe por padrão dois parametros:
 - url
 - body : que recebe o objeto com os valores a ser enviados para api
 
+## Criando uma instância do axios
+
+>O axios recebe um parametro chamado `create` com isso criamos uma base url
+
+```
+import axios from "axios";
+
+const http = axios.create({
+    baseURL: "http://localhost:8000/api/v2/"
+})
+
+export default htt
+```
+## Sobre componentes do MUI
+
+Existem vários componentes incríveis disponíveis no MUI, olhe os exemplos:
+
+>Tipografia
+A tipografia apresenta o seu conteúdo da forma mais clara e eficiente possível.
+
+>Links
+O componente Link nos permite personalizar elementos de âncora (tags a). E até mesmo podemos utilizar em conjunto com o do react-router-dom.
+
+>Paper
+Nesse componente do Material Design, as propriedades físicas de um papel são traduzidas para a tela.
+
+>Container
+É o elemento de layout mais básico, que centraliza seu conteúdo horizontalmente.
+
+>Box
+O componente Box serve como um componente encapsulador (wrapper) para auxiliar na maioria das necessidades de uso com CSS.
+
+## Códigos http
+
+Quando consumimos uma API REST, temos vários códigos que identificam o status de cada requisição:
+
+- 1xx para informação
+- 2xx para sucesso
+- 3xx para redirecionamento
+- 4xx para erros de cliente
+- 5xx para demais erros
+
 
 
 

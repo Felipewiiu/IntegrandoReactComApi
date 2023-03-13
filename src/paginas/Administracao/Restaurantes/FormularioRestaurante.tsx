@@ -44,55 +44,20 @@ export default function FormularioRestaurante() {
 
 
     return (
-        <>
-
-            <AppBar position='static'>
-                <Container maxWidth='xl'>
-                    <Toolbar>
-                        <Typography variant='h6'>
-                            Administração
-                        </Typography>
-                        <Box sx={{ display: 'flex', flexGrow: 1 }}>
-                            <Link component={RouterLink} to='/admin/restaurantes'>
-                                <Button sx={{ my: 2, color: 'white' }}>
-                                    Restaurante
-                                </Button>
-                            </Link>
-                            <Link component={RouterLink} to='/admin/restaurantes/novo'>
-                                <Button sx={{ my: 2, color: 'white' }}>
-                                    Novo restaurante
-                                </Button>
-                            </Link>
-                        </Box>
-                    </Toolbar>
-                </Container>
-            </AppBar>
-
-            <Box>
-                <Container maxWidth='lg' sx={{ mt: 1 }}>
-                    <Paper sx={{ p: 2 }}>
-
-                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , flexGrow: 1}}>
-                            <Typography component={"h1"} variant={'h6'}>Formulário Restaurantes</Typography>
-                            <Box component={'form'} onSubmit={aoSubmeterForm} sx={{width:'100%'}}>
-                                <TextField
-                                    value={nomeRestaurante}
-                                    onChange={evento =>
-                                        setNomeRestaurante(evento.target.value)}
-                                    label="Restaurante"
-                                    variant="standard"
-                                    fullWidth
-                                    required
-                                />
-                                <Button sx={{ marginTop: 1 }} type='submit' variant="outlined" fullWidth >Salvar</Button>
-                            </Box>
-                        </Box>
-
-                    </Paper>
-                </Container>
-            </Box>
-
-
-        </>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , flexGrow: 1}}>
+        <Typography component={"h1"} variant={'h6'}>Formulário Restaurantes</Typography>
+        <Box component={'form'} onSubmit={aoSubmeterForm} sx={{width:'100%'}}>
+            <TextField
+                value={nomeRestaurante}
+                onChange={evento =>
+                    setNomeRestaurante(evento.target.value)}
+                label="Restaurante"
+                variant="standard"
+                fullWidth
+                required
+            />
+            <Button sx={{ marginTop: 1 }} type='submit' variant="outlined" fullWidth >Salvar</Button>
+        </Box>
+    </Box>
     )
 }

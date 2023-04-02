@@ -1,31 +1,25 @@
-import { useEffect, useState } from 'react'
-import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button } from "@mui/material"
-import IRestaurante from '../../../interfaces/IRestaurante'
-import { Link } from 'react-router-dom'
-import http from '../../../HTTP'
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
+import { useEffect, useState } from "react"
+import http from "../../../http"
+import IRestaurante from "../../../interfaces/IRestaurante"
 
+import { Link as RouterLink } from 'react-router-dom'
 
-export default function AdministracaoRestaurantes() {
+const AdministracaoRestaurantes = () => {
 
     const [restaurantes, setRestaurantes] = useState<IRestaurante[]>([])
-    
 
     useEffect(() => {
-        http.get('restaurantes/')
-            .then(resposta => {
-                setRestaurantes(resposta.data)
-            })
-
+        http.get<IRestaurante[]>('restaurantes/')
+            .then(resposta => setRestaurantes(resposta.data))
     }, [])
 
-    const excluir = (restauranteASerExcluido: IRestaurante) =>{
-        http.delete(`restaurantes/${restauranteASerExcluido.id}/`)
-        .then(() =>{
-            const listaDeRestaurante = restaurantes.filter(
-                restaurante => restaurante.id !== restauranteASerExcluido.id)
-                setRestaurantes([...listaDeRestaurante])
-                
-        })
+    const excluir = (restauranteAhSerExcluido: IRestaurante) => {
+        http.delete(`restaurantes/${restauranteAhSerExcluido.id}/`)
+            .then(() => {
+                const listaRestaurante = restaurantes.filter(restaurante => restaurante.id !== restauranteAhSerExcluido.id)
+                setRestaurantes([...listaRestaurante])
+            })
     }
 
     return (
@@ -42,30 +36,26 @@ export default function AdministracaoRestaurantes() {
                         <TableCell>
                             Excluir
                         </TableCell>
-
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {restaurantes.map(restaurante => {
-                        return (
-                            <TableRow key={restaurante.id}>
-                                
-                                <TableCell>
-                                    {restaurante.nome}
-                                </TableCell>
-                                <TableCell>
-                                    [ <Link to={`/admin/restaurantes/${restaurante.id}`}>Editar</Link> ]
-                                </TableCell>
-                                <TableCell>
-                                    <Button variant="outlined" color="error" onClick={() => excluir(restaurante)}>
-                                        Excluir
-                                    </Button>
-                                </TableCell>
-                            </TableRow>
-                        )
-                    })}
+                    {restaurantes.map(restaurante => <TableRow key={restaurante.id}>
+                        <TableCell>
+                            {restaurante.nome}
+                        </TableCell>
+                        <TableCell>
+                            [ <RouterLink to={`/admin/restaurantes/${restaurante.id}`}>editar</RouterLink> ]
+                        </TableCell>
+                        <TableCell>
+                            <Button variant="outlined" color="error" onClick={() => excluir(restaurante)}>
+                                Excluir
+                            </Button>
+                        </TableCell>
+                    </TableRow>)}
                 </TableBody>
             </Table>
         </TableContainer>
     )
 }
+
+export default AdministracaoRestaurantes

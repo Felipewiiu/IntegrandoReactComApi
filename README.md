@@ -30,6 +30,9 @@ Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no se
 
 ## Como isntalar, criar e inicializar o docker?
 
+- Para inicializar o docker basta usar o comando: `docker-compose up` -- com o aplicativo aberto
+- 
+
 ## Baixando a biblioteca Mui
 
 Material UI é uma biblioteca de componentes React de código aberto que implementa o design do Google.
@@ -88,6 +91,32 @@ Quando consumimos uma API REST, temos vários códigos que identificam o status 
 - 3xx para redirecionamento
 - 4xx para erros de cliente
 - 5xx para demais erros
+
+## Enviando um arquivo de imagem para o banco de dados
+
+- Para esse feito é preciso usar uma classe que se chama formData que é uma classe do própio javascript
+
+### Exemplo:
+
+```
+    const aoSubmeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault()
+        const formData = new FormData()
+
+        formData.append('nome', nomePrato)
+        formData.append('descricao', descricao)
+
+        formData.append('tag', tag)
+        formData.append('restaurante', restaurante)
+
+        if(imagem) {
+            formData.append('imagem', imagem)
+        }
+
+
+    }
+```
+
 
 
 
